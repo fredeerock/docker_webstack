@@ -9,8 +9,8 @@ RUN yum update -y && yum install -y \
 RUN curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
 RUN yum install -y nodejs
 WORKDIR /root
-RUN wget http://download.redis.io/redis-stable.tar.gz && tar xvzf redis-stable.tar.gz && cd redis-stable && make
+RUN wget http://download.redis.io/redis-stable.tar.gz && tar xvzf redis-stable.tar.gz && cd redis-stable && make && make install
 EXPOSE 8080
-ADD project/ .
+COPY project/ /root/project/
 RUN cd project && npm install
 CMD npm start /root/project/app.js
