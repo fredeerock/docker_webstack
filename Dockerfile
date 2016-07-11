@@ -13,4 +13,4 @@ RUN wget http://download.redis.io/redis-stable.tar.gz && tar xvzf redis-stable.t
 EXPOSE 8080
 COPY project/ /root/project/
 RUN cd project && npm install
-CMD npm start /root/project/app.js
+CMD cd /root/project && npm start
