@@ -5,7 +5,8 @@ RUN yum update -y && yum install -y \
   which \
   gcc-c++ \
   make \
-  wget
+  wget \
+  git
 RUN curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
 RUN yum install -y nodejs
 WORKDIR /root
