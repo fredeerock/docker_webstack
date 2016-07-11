@@ -1,4 +1,5 @@
 # Webstack Dockerfile
+Primarily used to get node and redis up and running. It will also `npm install` and `npm start` anything inside the "project" directory.
 
 - Build using 'docker build -t gcr.io/spartan-perigee-136623/c7-node:v3 .'
 - Run using 'docker run -ti -v /Users/fredeerock/Docker/webstack/mnt:/root/mnt gcr.io/spartan-perigee-136623/c7-node:v3 /bin/bash'

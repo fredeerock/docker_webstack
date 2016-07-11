@@ -12,7 +12,8 @@ WORKDIR /root
 RUN wget http://download.redis.io/redis-stable.tar.gz && tar xvzf redis-stable.tar.gz && cd redis-stable && make
 EXPOSE 8080
 COPY project/ .
-CMD node project/app.js
+RUN cd project && npm install
+CMD npm start /root/project/app.js
 
 # Build using 'docker build -t gcr.io/spartan-perigee-136623/c7-node:v3 .'
 # Run using 'docker run -ti -v /Users/fredeerock/Docker/webstack/mnt:/root/mnt gcr.io/spartan-perigee-136623/c7-node:v3 /bin/bash'
